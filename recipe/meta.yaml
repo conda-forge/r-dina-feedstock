@@ -1,6 +1,5 @@
 {% set version = '2.0.0' %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-dina
@@ -13,8 +12,7 @@ source:
   sha256: 0d7a30c2e688842b78888735a104b4b1ab0399181931ca50db1017d6514a07eb
 
 build:
-  merge_build_host: True  # [win]
-  number: 2
+  number: 3
 
   rpaths:
     - lib/R/lib/
@@ -23,7 +21,9 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}              # [not win]
+    - {{ stdlib("c") }}                # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
+    - {{ stdlib("m2w64_c") }}          # [win]
     - {{ compiler('cxx') }}            # [not win]
     - {{ compiler('m2w64_cxx') }}      # [win]
     - {{ posix }}filesystem        # [win]
@@ -43,7 +43,6 @@ requirements:
 
   run:
     - r-base
-    - {{ native }}gcc-libs         # [win]
     - r-rcpp >=1.0.0
     - r-rcpparmadillo >=0.9.200
     - r-rgen
