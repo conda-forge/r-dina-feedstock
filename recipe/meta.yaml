@@ -1,4 +1,4 @@
-{% set version = '2.0.0' %}
+{% set version = "2.0.2" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/dina_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/dina/dina_{{ version }}.tar.gz
-  sha256: 0d7a30c2e688842b78888735a104b4b1ab0399181931ca50db1017d6514a07eb
+  sha256: ca766ecfd200bdb408d3508380fa46a74b2e962b938e7c7f6002149095751cea
 
 build:
-  number: 4
+  number: 0
 
   rpaths:
     - lib/R/lib/
@@ -57,8 +57,7 @@ about:
   home: https://github.com/tmsalab/dina
 
   license: GPL-2.0-or-later
-  summary: Estimate the Deterministic Input, Noisy "And" Gate (DINA) cognitive diagnostic model
-    parameters using the Gibbs sampler described by Culpepper (2015) <doi:10.3102/1076998615595403>.
+  summary: Estimate the Deterministic Input, Noisy "And" Gate (DINA) cognitive diagnostic model parameters using the Gibbs sampler described by Culpepper (2015) <doi:10.3102/1076998615595403>.
 
   license_family: GPL2
   license_file:
