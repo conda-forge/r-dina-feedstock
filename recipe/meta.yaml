@@ -1,4 +1,4 @@
-{% set version = "2.0.2" %}
+{% set version = "2.0.3" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/dina_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/dina/dina_{{ version }}.tar.gz
-  sha256: ca766ecfd200bdb408d3508380fa46a74b2e962b938e7c7f6002149095751cea
+  sha256: 697b265b2c1559f26ce098c421524fc62d57b0dfe334afe91dffea3daced1dd2
 
 build:
   number: 0
